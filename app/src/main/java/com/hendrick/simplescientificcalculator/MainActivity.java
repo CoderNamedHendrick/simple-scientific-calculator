@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNineButton.setOnClickListener(this);
         mZeroButton.setOnClickListener(this);
         mAddButton.setOnClickListener(this);
-        mSubtractButton.setOnClickListener(this);f
+        mSubtractButton.setOnClickListener(this);
         mMultiplyButton.setOnClickListener(this);
         mDivideButton.setOnClickListener(this);
         mAddSubtractButton.setOnClickListener(this);
