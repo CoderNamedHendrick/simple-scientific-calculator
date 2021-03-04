@@ -16,12 +16,13 @@
     <string name="divide">/</string>
     <string name="multiply">*</string>
     <string name="addSubtract">+/-</string>
+    <string name="equals">=</string>
     <string name="clear">clear</string>
     <string name="history">history</string>
     <string name="rootX">/x</string>
-    <string name="nrootX">n/x</string>
-    <string name="xsquare">x^2</string>
-    <string name="xraisedton">x^n</string>
+    <string name="nRootX">n/x</string>
+    <string name="xSquare">x^2</string>
+    <string name="xRaisedToN">x^n</string>
     <string name="log">log</string>
     <string name="naturalLog">ln</string>
 </resources>
