@@ -1,5 +1,6 @@
 package com.hendrick.simplescientificcalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-
+    private String PERSIST_STATE = "persist_state";
     private Button mClearBtn;
     private Button mHistoryBtn;
     private Button mEqualBtn;
@@ -47,6 +48,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonClicks();
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(PERSIST_STATE, mCalcTV.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mCalcTV.setText(savedInstanceState.getString(PERSIST_STATE));
+    }
+
     private void initializeDisplayContent() {
         // Calculator TextView
         mCalcTV = findViewById(R.id.calcTV);
@@ -67,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEightButton = findViewById(R.id.eightBtn);
         mNineButton = findViewById(R.id.nineBtn);
         mZeroButton = findViewById(R.id.zeroBtn);
-        mDecimalButton = findViewById(R.id.zeroBtn);
+        mDecimalButton = findViewById(R.id.decimalBtn);
 
         // operators buttons
         mAddButton = findViewById(R.id.addBtn);
@@ -96,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEightButton.setOnClickListener(this);
         mNineButton.setOnClickListener(this);
         mZeroButton.setOnClickListener(this);
+        mDecimalButton.setOnClickListener(this);
         mAddButton.setOnClickListener(this);
         mSubtractButton.setOnClickListener(this);
         mMultiplyButton.setOnClickListener(this);
@@ -104,12 +118,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEqualBtn.setOnClickListener(this);
         mClearBtn.setOnClickListener(this);
         mHistoryBtn.setOnClickListener(this);
-        mNRootXBtn.setOnClickListener(this);
-        mRootXBtn.setOnClickListener(this);
-        mXRaisedToNBtn.setOnClickListener(this);
-        mXSquareBtn.setOnClickListener(this);
-        mNaturalLogBtn.setOnClickListener(this);
-        mLogBtn.setOnClickListener(this);
+//        mNRootXBtn.setOnClickListener(this);
+//        mRootXBtn.setOnClickListener(this);
+//        mXRaisedToNBtn.setOnClickListener(this);
+//        mXSquareBtn.setOnClickListener(this);
+//        mNaturalLogBtn.setOnClickListener(this);
+//        mLogBtn.setOnClickListener(this);
     }
 
     @Override
