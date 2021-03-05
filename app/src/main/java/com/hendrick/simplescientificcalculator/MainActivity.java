@@ -46,7 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initializeDisplayContent();
+        Configuration configuration = getResources().getConfiguration();
+        if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            initializeDisplayContent();
+            defaultButtonConfiguration();
+        } else
+            initializeDisplayContent();
         buttonClicks();
     }
 
@@ -98,6 +103,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mXSquareBtn = findViewById(R.id.xSquareBtn);
         mNaturalLogBtn = findViewById(R.id.naturalLogBtn);
         mLogBtn = findViewById(R.id.logBtn);
+    }
+
+    private void defaultButtonConfiguration(){
+        mNRootXBtn.setVisibility(View.GONE);
+        mRootXBtn.setVisibility(View.GONE);
+        mXRaisedToNBtn.setVisibility(View.GONE);
+        mXSquareBtn.setVisibility(View.GONE);
+        mNaturalLogBtn.setVisibility(View.GONE);
+        mLogBtn.setVisibility(View.GONE);
     }
 
     public void buttonClicks(){
