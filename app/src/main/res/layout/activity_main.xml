@@ -7,6 +7,60 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/rootXBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/rootX"
+        app:layout_constraintStart_toEndOf="@+id/nRootXBtn"
+        app:layout_constraintTop_toTopOf="@+id/nRootXBtn" />
+
+    <Button
+        android:id="@+id/nRootXBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/nRootX"
+        app:layout_constraintStart_toEndOf="@+id/xSquareBtn"
+        app:layout_constraintTop_toTopOf="@+id/xSquareBtn" />
+
+    <Button
+        android:id="@+id/xSquareBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/xSquare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <Button
+        android:id="@+id/naturalLogBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/naturalLog"
+        app:layout_constraintStart_toEndOf="@+id/rootXBtn"
+        app:layout_constraintTop_toTopOf="@+id/rootXBtn" />
+
+    <Button
+        android:id="@+id/logBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/log"
+        app:layout_constraintEnd_toStartOf="@+id/xRaiseToNBtn"
+        app:layout_constraintTop_toBottomOf="@+id/xSquareBtn" />
+
+    <Button
+        android:id="@+id/xRaiseToNBtn"
+        style="@style/Theme.SpecialButtons"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:text="@string/xRaisedToN"
+        app:layout_constraintEnd_toEndOf="@+id/naturalLogBtn"
+        app:layout_constraintTop_toBottomOf="@+id/naturalLogBtn" />
+
+    <Button
         android:id="@+id/addSubtractBtn"
         style="@style/Theme.SpecialButtons"
         android:layout_width="wrap_content"

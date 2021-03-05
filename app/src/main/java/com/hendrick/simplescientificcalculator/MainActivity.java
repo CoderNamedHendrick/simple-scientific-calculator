@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mNaturalLogBtn;
     private Button mLogBtn;
     private TextView mCalcTV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
