@@ -51,4 +51,8 @@ public class HistoryHelper {
         expression = "";
         operationals = new String[3];
     }
+
+    public void addToList(String s) {
+        operations.add(s);
+    }
 }
