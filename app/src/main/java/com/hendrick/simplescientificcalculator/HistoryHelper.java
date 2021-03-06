@@ -38,7 +38,7 @@ public class HistoryHelper {
         operations.add(expression);
     }
 
-    public List<String> returnAll(){
+    public List<String> returnOperationsList(){
         return operations;
     }
 

@@ -6,13 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private String PERSIST_STATE = "persist_state";
+    public static String HISTORY_DATA = "history_expressions";
     private Button mClearBtn;
     private Button mHistoryBtn;
     private Button mEqualBtn;
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mNaturalLogBtn;
     private Button mLogBtn;
     private TextView mCalcTV;
+    private HistoryHelper mHistoryHelper;
 
 
     @Override
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mHistoryHelper = HistoryHelper.getInstance();
         Configuration configuration = getResources().getConfiguration();
         if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
             initializeDisplayContent();
@@ -134,12 +141,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEqualBtn.setOnClickListener(this);
         mClearBtn.setOnClickListener(this);
         mHistoryBtn.setOnClickListener(this);
-//        mNRootXBtn.setOnClickListener(this);
-//        mRootXBtn.setOnClickListener(this);
-//        mXRaisedToNBtn.setOnClickListener(this);
-//        mXSquareBtn.setOnClickListener(this);
-//        mNaturalLogBtn.setOnClickListener(this);
-//        mLogBtn.setOnClickListener(this);
+        mNRootXBtn.setOnClickListener(this);
+        mRootXBtn.setOnClickListener(this);
+        mXRaisedToNBtn.setOnClickListener(this);
+        mXSquareBtn.setOnClickListener(this);
+        mNaturalLogBtn.setOnClickListener(this);
+        mLogBtn.setOnClickListener(this);
     }
 
     @Override
@@ -164,10 +171,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             input("9");
         else if (v == mZeroButton)
             input("0");
-        else if (v == mDecimalButton)
-            input(".");
+        else if (v == mDecimalButton) {
+            if (mCalcTV.getText().toString().contains(".")){
+                mDecimalButton.setEnabled(false);
+            }else
+                input(".");
+        }else if (v == mAddButton){
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("+");
+            mCalcTV.setText("");
+        } else if (v == mSubtractButton){
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("-");
+            mCalcTV.setText("");
+        } else if (v == mDivideButton){
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("/");
+            mCalcTV.setText("");
+        } else if (v == mMultiplyButton){
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("*");
+            mCalcTV.setText("");
+        } else if (v == mEqualBtn){
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToList();
+            mHistoryHelper.reset();
+            mCalcTV.setText("");
+        }
         else if (v == mHistoryBtn){
             Intent intent = new Intent(MainActivity.this, CalculationHistory.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("ARRAYLIST", (Serializable) mHistoryHelper.returnOperationsList());
+            intent.putExtra(HISTORY_DATA, bundle);
             startActivity(intent);
         }
     }
