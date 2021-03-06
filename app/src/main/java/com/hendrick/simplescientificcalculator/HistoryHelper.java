@@ -29,7 +29,7 @@ public class HistoryHelper {
 
     private void createExpression(){
         for (int i = 0; i < operationals.length; i++){
-            expression += operationals[i];
+            expression += " " + operationals[i];
         }
     }
 
@@ -40,6 +40,10 @@ public class HistoryHelper {
 
     public List<String> returnOperationsList(){
         return operations;
+    }
+
+    public String returnOperationbyIndex(int index){
+        return operations.get(index);
     }
 
     public void reset(){
