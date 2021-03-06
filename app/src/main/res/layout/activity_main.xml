@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintGuide_begin="140dp" />
+        app:layout_constraintGuide_begin="202dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintGuide_begin="378dp" />
+        app:layout_constraintGuide_begin="440dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -120,7 +120,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintGuide_begin="199dp" />
+        app:layout_constraintGuide_begin="261dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintGuide_begin="258dp" />
+        app:layout_constraintGuide_begin="320dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintGuide_begin="311dp" />
+        app:layout_constraintGuide_begin="377dp" />
 
     <TextView
         android:id="@+id/calcTV"
@@ -148,7 +148,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline22" />
 
     <Button
         android:id="@+id/sevenBtn"
@@ -303,5 +303,12 @@
         android:text="@string/history"
         app:layout_constraintEnd_toEndOf="@+id/decimalBtn"
         app:layout_constraintTop_toTopOf="@+id/clearBtn" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="62dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,6 +64,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             defaultButtonConfiguration();
         } else
             initializeDisplayContent();
+        mAddButton.setEnabled(false);
+        mSubtractButton.setEnabled(false);
+        mDivideButton.setEnabled(false);
+        mMultiplyButton.setEnabled(false);
+        mRootXBtn.setEnabled(false);
+        mXRaisedToNBtn.setEnabled(false);
+        mNRootXBtn.setEnabled(false);
+        mXSquareBtn.setEnabled(false);
+        mLogBtn.setEnabled(false);
+        mNaturalLogBtn.setEnabled(false);
         buttonClicks();
     }
 
@@ -156,27 +166,147 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == mOneButton)
+        if (v == mOneButton) {
             input("1");
-        else if (v == mTwoButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mTwoButton) {
             input("2");
-        else if (v == mThreeButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mThreeButton) {
             input("3");
-        else if (v == mFourButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mFourButton) {
             input("4");
-        else if (v == mFiveButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mFiveButton) {
             input("5");
-        else if (v == mSixButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mSixButton) {
             input("6");
-        else if (v == mSevenButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mSevenButton) {
             input("7");
-        else if (v == mEightButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mEightButton) {
             input("8");
-        else if (v == mNineButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mNineButton) {
             input("9");
-        else if (v == mZeroButton)
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
+        else if (v == mZeroButton) {
             input("0");
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+        }
         else if (v == mDecimalButton) {
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
             if (mCalcTV.getText().toString().contains(".")){
                 mDecimalButton.setEnabled(false);
             }else
@@ -187,6 +317,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mSubtractButton.setEnabled(false);
             mDivideButton.setEnabled(false);
             mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("+");
             mCalcTV.setText("");
@@ -196,6 +332,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mSubtractButton.setEnabled(false);
             mDivideButton.setEnabled(false);
             mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("-");
             mCalcTV.setText("");
@@ -205,6 +347,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mSubtractButton.setEnabled(false);
             mDivideButton.setEnabled(false);
             mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("\u00F7");
             mCalcTV.setText("");
@@ -214,24 +362,114 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mSubtractButton.setEnabled(false);
             mDivideButton.setEnabled(false);
             mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("*");
             mCalcTV.setText("");
         } else if (v == mAddSubtractButton){
             mCalcTV.setText(mCalcTV.getText().toString().contains("-") ?
                     mCalcTV.getText().toString().substring(1) : "-"+mCalcTV.getText().toString());
-        } else if (v == mClearBtn){
-            mCalcTV.setText("");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mHistoryHelper.reset();
+        }// operations for the buttons that shows in landscape mode
+        else if (v == mRootXBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            firstArgument = 2;
+            mCalcTV.setText("\u221A" + mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("");
+            mHistoryHelper.addToExpression("\u221A");
+        } else if (v == mNRootXBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
+            input("\u221A");
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("\u221A");
+        } else if (v == mXRaisedToNBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("^");
+            input("^");
+        } else if (v == mXSquareBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+            mHistoryHelper.addToExpression("^");
+            input("^2");
+        } else if (v == mLogBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            mCalcTV.setText("log(" + mCalcTV.getText().toString() + ")");
+        } else if (v == mNaturalLogBtn){
+            mAddButton.setEnabled(false);
+            mSubtractButton.setEnabled(false);
+            mDivideButton.setEnabled(false);
+            mMultiplyButton.setEnabled(false);
+            mRootXBtn.setEnabled(false);
+            mXRaisedToNBtn.setEnabled(false);
+            mNRootXBtn.setEnabled(false);
+            mXSquareBtn.setEnabled(false);
+            mLogBtn.setEnabled(false);
+            mNaturalLogBtn.setEnabled(false);
+            mCalcTV.setText("ln(" + mCalcTV.getText().toString() + ")");
         } else if (v == mEqualBtn){
             mAddButton.setEnabled(true);
             mSubtractButton.setEnabled(true);
             mDivideButton.setEnabled(true);
             mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
             String result = "0";
             if (mCalcTV.getText().toString().contains("\u221A")) {
                 String getInfo = mCalcTV.getText().toString();
@@ -293,31 +531,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mCalcTV.setText(result);
 
             count++;
-        } // operations for the buttons that shows in landscape mode
-        else if (v == mRootXBtn){
-            firstArgument = 2;
-            input("\u221A");
-            mHistoryHelper.addToExpression("");
-            mHistoryHelper.addToExpression("\u221A");
-        } else if (v == mNRootXBtn){
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
-            input("\u221A");
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("\u221A");
-        } else if (v == mXRaisedToNBtn){
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("^");
-            input("^");
-        } else if (v == mXSquareBtn){
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("^");
-            input("^2");
-        } else if (v == mLogBtn){
-            mCalcTV.setText("log(" + mCalcTV.getText().toString() + ")");
-        } else if (v == mNaturalLogBtn){
-            mCalcTV.setText("ln(" + mCalcTV.getText().toString() + ")");
+        }else if (v == mClearBtn){
+            mCalcTV.setText("");
+            mAddButton.setEnabled(true);
+            mSubtractButton.setEnabled(true);
+            mDivideButton.setEnabled(true);
+            mMultiplyButton.setEnabled(true);
+            mRootXBtn.setEnabled(true);
+            mXRaisedToNBtn.setEnabled(true);
+            mNRootXBtn.setEnabled(true);
+            mXSquareBtn.setEnabled(true);
+            mLogBtn.setEnabled(true);
+            mNaturalLogBtn.setEnabled(true);
+            mHistoryHelper.reset();
         } // passing the intent when the history button is pressed
         else if (v == mHistoryBtn){
             Intent intent = new Intent(MainActivity.this, CalculationHistory.class);
