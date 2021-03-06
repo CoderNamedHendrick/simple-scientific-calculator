@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mClearBtn){
             mCalcTV.setText("");
         } else if (v == mEqualBtn){
-            double result = 0;
+            String result = "0";
             secondArgument = Double.parseDouble(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToList();
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else if (mHistoryHelper.returnOperationbyIndex(count).contains("/"))
                 result = CalculationOperation.divide(firstArgument, secondArgument);
 
-            mCalcTV.setText(String.valueOf(result));
+            mCalcTV.setText(result);
 
             count++;
         }

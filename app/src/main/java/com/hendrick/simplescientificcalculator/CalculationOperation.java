@@ -1,22 +1,27 @@
 package com.hendrick.simplescientificcalculator;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 public class CalculationOperation {
-    private CalculationOperation(){}
+    static DecimalFormat df = new DecimalFormat("#.#########");
 
-    public static double add(double argumentOne, double argumentTwo){
-        return argumentOne + argumentTwo;
+    private CalculationOperation(){ df.setRoundingMode(RoundingMode.CEILING);}
+
+    public static String add(double argumentOne, double argumentTwo){
+        return df.format(argumentOne + argumentTwo);
     }
 
-    public static double subtract(double argumentOne, double argumentTwo){
-        return argumentOne - argumentTwo;
+    public static String subtract(double argumentOne, double argumentTwo){
+        return df.format(argumentOne - argumentTwo);
     }
 
-    public static double divide(double argumentOne, double argumentTwo){
-        return argumentOne/argumentTwo;
+    public static String divide(double argumentOne, double argumentTwo){
+        return df.format(argumentOne/argumentTwo);
     }
 
-    public static double multiply(double argumentOne, double argumentTwo){
-        return argumentOne*argumentTwo;
+    public static String multiply(double argumentOne, double argumentTwo){
+        return df.format(argumentOne*argumentTwo);
     }
 
     public static double logarithm(double argument){
