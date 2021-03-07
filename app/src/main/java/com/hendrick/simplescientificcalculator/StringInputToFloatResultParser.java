@@ -11,22 +11,26 @@ import java.util.Stack;
 public class StringInputToFloatResultParser {
     private static List<Double> arguments;
     private static Stack<Character> operands;
-    private final float mResult;
+    private Object IllegalArgumentException = null;
+    private float mResult;
     private String mOperator;
     private final Random mRand;
     private final List<String> mOperators;
 
-    public StringInputToFloatResultParser(String input){
+    public StringInputToFloatResultParser(String input) throws Throwable {
         this.arguments = new ArrayList<Double>();
         this.operands = new Stack<>();
 
         mOperators = new ArrayList<>(Arrays.asList("+", "-", "*", "\u00F7", "^", "\u221A"));
         mRand = new Random();
         mOperator = mOperators.get(mRand.nextInt(mOperators.size()));
-        getArguments(input);
-
-        final int times = operands.size();
-        mResult = (float) calculate(times);
+        try {
+            getArguments(input);
+            final int times = operands.size();
+            mResult = (float) calculate(times);
+        } catch (Exception e){
+            throw (Throwable) IllegalArgumentException;
+        }
     }
 
     // Method to calculate the arguments which are placed the arguments ArrayList.

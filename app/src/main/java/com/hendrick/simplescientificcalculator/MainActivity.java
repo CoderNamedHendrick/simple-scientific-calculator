@@ -12,6 +12,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.stream.Stream;
@@ -325,10 +328,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             } else
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            String result = "0";
             mHistoryHelper.addToList();
             mHistoryHelper.reset();
             mCalcTV.setText("");
+
+            if (mHistoryHelper.returnOperationbyIndex(count).contains("log")){
+                String expression = mHistoryHelper.returnOperationbyIndex(count);
+                double argument = Double.parseDouble(expression.substring(expression.indexOf("(")+1, expression.indexOf(")")));
+                mCalcTV.setText(Double.toString(Math.log10(argument)));
+                return;
+            } else if (mHistoryHelper.returnOperationbyIndex(count).contains("ln")){
+                String expression = mHistoryHelper.returnOperationbyIndex(count);
+                double argument = Double.parseDouble(expression.substring(expression.indexOf("(")+1, expression.indexOf(")")));
+                mCalcTV.setText(Double.toString(Math.log10(argument)));
+                return;
+            }
 
             doCalculation(mHistoryHelper.returnOperationbyIndex(count));
             count++;
@@ -352,8 +366,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String result;
             @Override
             protected Object doInBackground(Object[] objects) {
-                StringInputToFloatResultParser stringInputToFloatResultParser = new StringInputToFloatResultParser(inputString);
-                result = stringInputToFloatResultParser.toString();
+                StringInputToFloatResultParser stringInputToFloatResultParser = null;
+                try {
+                    stringInputToFloatResultParser = new StringInputToFloatResultParser(inputString);
+                    result = stringInputToFloatResultParser.toString();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
                 return null;
             }
 
