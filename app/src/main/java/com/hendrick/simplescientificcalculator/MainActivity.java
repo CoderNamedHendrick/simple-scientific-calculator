@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String PERSIST_STATE = "persist_state";
     public static String HISTORY_DATA = "history_expressions";
+    private String COUNT_STATE = "count";
     private Button mClearBtn;
     private Button mHistoryBtn;
     private Button mEqualBtn;
@@ -73,12 +74,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(PERSIST_STATE, mCalcTV.getText().toString());
+        outState.putInt(COUNT_STATE, count);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         mCalcTV.setText(savedInstanceState.getString(PERSIST_STATE));
+        count = savedInstanceState.getInt(COUNT_STATE);
     }
 
     private void initializeDisplayContent() {
@@ -205,27 +208,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }else
                 input(".");
         }else if (v == mAddButton){
-            firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
+            if (mCalcTV.getText().toString().contains("^")){
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0,mCalcTV.getText().toString().indexOf("^")));
+                mHistoryHelper.addToExpression("^");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
+            } else if (mCalcTV.getText().toString().contains("\u221A")){
+                if(mCalcTV.getText().toString()
+                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                    mHistoryHelper.addToExpression("2");
+                else
+                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                mHistoryHelper.addToExpression("\u221A");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
+            } else
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             buttonState(false);
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("+");
             mCalcTV.setText("");
         } else if (v == mSubtractButton){
-            firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
+            if (mCalcTV.getText().toString().contains("^")){
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0,mCalcTV.getText().toString().indexOf("^")));
+                mHistoryHelper.addToExpression("^");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
+            } else if (mCalcTV.getText().toString().contains("\u221A")){
+                if(mCalcTV.getText().toString()
+                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                    mHistoryHelper.addToExpression("2");
+                else
+                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                mHistoryHelper.addToExpression("\u221A");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
+            }else
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             buttonState(false);
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("-");
             mCalcTV.setText("");
         } else if (v == mDivideButton){
-            firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
+            if (mCalcTV.getText().toString().contains("^")){
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0,mCalcTV.getText().toString().indexOf("^")));
+                mHistoryHelper.addToExpression("^");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
+            } else if (mCalcTV.getText().toString().contains("\u221A")){
+                if(mCalcTV.getText().toString()
+                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                    mHistoryHelper.addToExpression("2");
+                else
+                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                mHistoryHelper.addToExpression("\u221A");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
+            }else
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             buttonState(false);
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("\u00F7");
             mCalcTV.setText("");
         } else if (v == mMultiplyButton){
-            firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
+            if (mCalcTV.getText().toString().contains("^")){
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0,mCalcTV.getText().toString().indexOf("^")));
+                mHistoryHelper.addToExpression("^");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
+            } else if (mCalcTV.getText().toString().contains("\u221A")){
+                if(mCalcTV.getText().toString()
+                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                    mHistoryHelper.addToExpression("2");
+                else
+                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                mHistoryHelper.addToExpression("\u221A");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
+            }else
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             buttonState(false);
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("*");
             mCalcTV.setText("");
         } else if (v == mAddSubtractButton){
@@ -233,98 +284,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mCalcTV.getText().toString().substring(1) : "-"+mCalcTV.getText().toString());
         }// operations for the buttons that shows in landscape mode
         else if (v == mRootXBtn){
-            buttonState(false);
-            firstArgument = 2;
+            buttonState(true);
             mCalcTV.setText("\u221A" + mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("");
-            mHistoryHelper.addToExpression("\u221A");
+            specialButtonState(false);
         } else if (v == mNRootXBtn){
-            buttonState(false);
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
+            buttonState(true);
             input("\u221A");
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("\u221A");
         } else if (v == mXRaisedToNBtn){
-            buttonState(false);
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("^");
+            buttonState(true);
+//            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+//            mHistoryHelper.addToExpression("^");
             input("^");
         } else if (v == mXSquareBtn){
-            buttonState(false);
-            firstArgument = Double.parseDouble(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-            mHistoryHelper.addToExpression("^");
+            buttonState(true);
+//            mHistoryHelper.addToExpression(mCalcTV.getText().toString());
+//            mHistoryHelper.addToExpression("^");
             input("^2");
+            specialButtonState(false);
         } else if (v == mLogBtn){
-            buttonState(false);
+            buttonState(true);
             mCalcTV.setText("log(" + mCalcTV.getText().toString() + ")");
+            specialButtonState(false);
         } else if (v == mNaturalLogBtn){
-            buttonState(false);
+            buttonState(true);
             mCalcTV.setText("ln(" + mCalcTV.getText().toString() + ")");
+            specialButtonState(false);
         } else if (v == mEqualBtn){
             buttonState(true);
-            String result = "0";
-            if (mCalcTV.getText().toString().contains("\u221A")) {
-                String getInfo = mCalcTV.getText().toString();
-               if (mCalcTV.getText().toString().startsWith("\u221A")){
-                   secondArgument = Double.parseDouble(mCalcTV.getText().toString().substring(1));
-                   mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(1));
-               } else {
-                   secondArgument = Double.parseDouble(mCalcTV.getText().toString().substring(2));
-                   mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(2));
-               }
-               mHistoryHelper.addToList();
-               mHistoryHelper.reset();
-               mCalcTV.setText("");
-            } else if (mCalcTV.getText().toString().contains("^")){
-                secondArgument = Double.parseDouble(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^") + 1));
-                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")));
-                mHistoryHelper.addToList();
-                mHistoryHelper.reset();
-                mCalcTV.setText("");
-            } else if (mCalcTV.getText().toString().contains("log")){
-                secondArgument = Double.parseDouble(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("(") + 1,
-                        mCalcTV.getText().toString().indexOf(")")));
-                mHistoryHelper.addToList("log(" + secondArgument + ")");
-                mHistoryHelper.reset();
-                mCalcTV.setText("");
-            }else if (mCalcTV.getText().toString().contains("ln")) {
-                secondArgument = Double.parseDouble(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("(") + 1,
-                        mCalcTV.getText().toString().indexOf(")")));
-                mHistoryHelper.addToList("ln(" + secondArgument + ")");
-                mHistoryHelper.reset();
-                mCalcTV.setText("");
-            }
-            else{
-                secondArgument = Double.parseDouble(mCalcTV.getText().toString());
+            if (mCalcTV.getText().toString().contains("^")){
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0,mCalcTV.getText().toString().indexOf("^")));
+                mHistoryHelper.addToExpression("^");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
+            } else if (mCalcTV.getText().toString().contains("\u221A")){
+                if(mCalcTV.getText().toString()
+                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                    mHistoryHelper.addToExpression("2");
+                else
+                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                mHistoryHelper.addToExpression("\u221A");
+                mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
+            } else
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString());
-                mHistoryHelper.addToList();
-                mHistoryHelper.reset();
-                mCalcTV.setText("");
-            }
+            String result = "0";
+            mHistoryHelper.addToList();
+            mHistoryHelper.reset();
+            mCalcTV.setText("");
 
-            // Calculation Operations
             doCalculation(mHistoryHelper.returnOperationbyIndex(count));
-//            if (mHistoryHelper.returnOperationbyIndex(count).contains("+"))
-//                result = CalculationOperation.add(firstArgument, secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("-"))
-//                result = CalculationOperation.subtract(firstArgument, secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("*"))
-//                result = CalculationOperation.multiply(firstArgument, secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u00F7"))
-//                result = CalculationOperation.divide(firstArgument, secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u221A"))
-//                result = CalculationOperation.root(secondArgument, (int) firstArgument);
-//            else if(mHistoryHelper.returnOperationbyIndex(count).contains("^"))
-//                result = CalculationOperation.power(firstArgument, (int) secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("log"))
-//                result = CalculationOperation.logarithm(secondArgument);
-//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("ln"))
-//                result = CalculationOperation.naturalLog(secondArgument);
-
-            mCalcTV.setText(result);
-
             count++;
         }else if (v == mClearBtn){
             mCalcTV.setText("");
@@ -372,6 +378,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mXSquareBtn.setEnabled(enableState);
         mLogBtn.setEnabled(enableState);
         mNaturalLogBtn.setEnabled(enableState);
+    }
+
+    private void specialButtonState(boolean state){
+        mRootXBtn.setEnabled(state);
+        mXRaisedToNBtn.setEnabled(state);
+        mNRootXBtn.setEnabled(state);
+        mXSquareBtn.setEnabled(state);
+        mLogBtn.setEnabled(state);
+        mNaturalLogBtn.setEnabled(state);
     }
 
     private void input(String s) {
