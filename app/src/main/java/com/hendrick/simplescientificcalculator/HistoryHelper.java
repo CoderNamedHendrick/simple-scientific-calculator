@@ -9,7 +9,7 @@ public class HistoryHelper {
     private String expression = "";
 
     public List<String> operations;
-    public String[] operationals =  new String[3];
+    public List<String> operationals =  new ArrayList<String>();
     int operationalCount;
     private HistoryHelper(){
         operations = new ArrayList<>();
@@ -23,13 +23,13 @@ public class HistoryHelper {
     }
 
     public void addToExpression(String operational){
-        operationals[operationalCount] = operational;
+        operationals.add(operationalCount, operational);
         operationalCount++;
     }
 
     private void createExpression(){
-        for (int i = 0; i < operationals.length; i++){
-            expression += " " + operationals[i];
+        for (int i = 0; i < operationals.size(); i++){
+            expression += " " + operationals.get(i);
         }
     }
 
@@ -49,7 +49,7 @@ public class HistoryHelper {
     public void reset(){
         operationalCount = 0;
         expression = "";
-        operationals = new String[3];
+        operationals = new ArrayList<String>();
     }
 
     public void addToList(String s) {

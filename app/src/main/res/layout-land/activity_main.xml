@@ -15,8 +15,8 @@
         android:text="@string/seven"
         app:layout_constraintBottom_toTopOf="@+id/fourBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline19" />
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
         android:id="@+id/eightBtn"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/sevenBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
-        app:layout_constraintTop_toBottomOf="@+id/addSubtractBtn" />
+        app:layout_constraintTop_toTopOf="@+id/sevenBtn" />
 
     <Button
         android:id="@+id/nineBtn"
@@ -46,6 +46,7 @@
         android:id="@+id/calcTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingVertical="12dp"
         android:paddingRight="8dp"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
@@ -58,28 +59,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="236dp" />
+        app:layout_constraintGuide_begin="185dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="284dp" />
+        app:layout_constraintGuide_begin="240dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="341dp" />
+        app:layout_constraintGuide_begin="297dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="380dp" />
+        app:layout_constraintGuide_begin="350dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline14"
@@ -128,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="188dp" />
+        app:layout_constraintGuide_begin="144dp" />
 
     <Button
         android:id="@+id/clearBtn"
@@ -198,7 +199,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="@string/divide"
-        app:layout_constraintBottom_toTopOf="@+id/eightBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/multiplyBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toTopOf="@+id/multiplyBtn" />
@@ -224,6 +225,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:text="@string/addSubtract"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline19"
@@ -261,7 +263,8 @@
         android:text="@string/four"
         app:layout_constraintBottom_toTopOf="@+id/oneBtn"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
-        app:layout_constraintStart_toStartOf="@+id/guideline19" />
+        app:layout_constraintStart_toStartOf="@+id/guideline19"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <Button
         android:id="@+id/threeBtn"
@@ -408,13 +411,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="140dp" />
+        app:layout_constraintGuide_begin="96dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="44dp" />
+        app:layout_constraintGuide_begin="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

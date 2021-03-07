@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.KeyEvent;
@@ -64,16 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             defaultButtonConfiguration();
         } else
             initializeDisplayContent();
-        mAddButton.setEnabled(false);
-        mSubtractButton.setEnabled(false);
-        mDivideButton.setEnabled(false);
-        mMultiplyButton.setEnabled(false);
-        mRootXBtn.setEnabled(false);
-        mXRaisedToNBtn.setEnabled(false);
-        mNRootXBtn.setEnabled(false);
-        mXSquareBtn.setEnabled(false);
-        mLogBtn.setEnabled(false);
-        mNaturalLogBtn.setEnabled(false);
+        buttonState(false);
         buttonClicks();
     }
 
@@ -168,206 +160,71 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == mOneButton) {
             input("1");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mTwoButton) {
             input("2");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mThreeButton) {
             input("3");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mFourButton) {
             input("4");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mFiveButton) {
             input("5");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mSixButton) {
             input("6");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mSevenButton) {
             input("7");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mEightButton) {
             input("8");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mNineButton) {
             input("9");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mZeroButton) {
             input("0");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
         }
         else if (v == mDecimalButton) {
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
             if (mCalcTV.getText().toString().contains(".")){
                 mDecimalButton.setEnabled(false);
             }else
                 input(".");
         }else if (v == mAddButton){
             firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("+");
             mCalcTV.setText("");
         } else if (v == mSubtractButton){
             firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("-");
             mCalcTV.setText("");
         } else if (v == mDivideButton){
             firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("\u00F7");
             mCalcTV.setText("");
         } else if (v == mMultiplyButton){
             firstArgument =  Double.parseDouble(mCalcTV.getText().toString());
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("*");
             mCalcTV.setText("");
@@ -376,100 +233,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mCalcTV.getText().toString().substring(1) : "-"+mCalcTV.getText().toString());
         }// operations for the buttons that shows in landscape mode
         else if (v == mRootXBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             firstArgument = 2;
             mCalcTV.setText("\u221A" + mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("");
             mHistoryHelper.addToExpression("\u221A");
         } else if (v == mNRootXBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             firstArgument = Double.parseDouble(mCalcTV.getText().toString());
             input("\u221A");
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("\u221A");
         } else if (v == mXRaisedToNBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             firstArgument = Double.parseDouble(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("^");
             input("^");
         } else if (v == mXSquareBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             firstArgument = Double.parseDouble(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression(mCalcTV.getText().toString());
             mHistoryHelper.addToExpression("^");
             input("^2");
         } else if (v == mLogBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mCalcTV.setText("log(" + mCalcTV.getText().toString() + ")");
         } else if (v == mNaturalLogBtn){
-            mAddButton.setEnabled(false);
-            mSubtractButton.setEnabled(false);
-            mDivideButton.setEnabled(false);
-            mMultiplyButton.setEnabled(false);
-            mRootXBtn.setEnabled(false);
-            mXRaisedToNBtn.setEnabled(false);
-            mNRootXBtn.setEnabled(false);
-            mXSquareBtn.setEnabled(false);
-            mLogBtn.setEnabled(false);
-            mNaturalLogBtn.setEnabled(false);
+            buttonState(false);
             mCalcTV.setText("ln(" + mCalcTV.getText().toString() + ")");
         } else if (v == mEqualBtn){
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
             String result = "0";
             if (mCalcTV.getText().toString().contains("\u221A")) {
                 String getInfo = mCalcTV.getText().toString();
@@ -511,38 +305,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             // Calculation Operations
-            if (mHistoryHelper.returnOperationbyIndex(count).contains("+"))
-                result = CalculationOperation.add(firstArgument, secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("-"))
-                result = CalculationOperation.subtract(firstArgument, secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("*"))
-                result = CalculationOperation.multiply(firstArgument, secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u00F7"))
-                result = CalculationOperation.divide(firstArgument, secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u221A"))
-                result = CalculationOperation.root(secondArgument, (int) firstArgument);
-            else if(mHistoryHelper.returnOperationbyIndex(count).contains("^"))
-                result = CalculationOperation.power(firstArgument, (int) secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("log"))
-                result = CalculationOperation.logarithm(secondArgument);
-            else if (mHistoryHelper.returnOperationbyIndex(count).contains("ln"))
-                result = CalculationOperation.naturalLog(secondArgument);
+            doCalculation(mHistoryHelper.returnOperationbyIndex(count));
+//            if (mHistoryHelper.returnOperationbyIndex(count).contains("+"))
+//                result = CalculationOperation.add(firstArgument, secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("-"))
+//                result = CalculationOperation.subtract(firstArgument, secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("*"))
+//                result = CalculationOperation.multiply(firstArgument, secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u00F7"))
+//                result = CalculationOperation.divide(firstArgument, secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("\u221A"))
+//                result = CalculationOperation.root(secondArgument, (int) firstArgument);
+//            else if(mHistoryHelper.returnOperationbyIndex(count).contains("^"))
+//                result = CalculationOperation.power(firstArgument, (int) secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("log"))
+//                result = CalculationOperation.logarithm(secondArgument);
+//            else if (mHistoryHelper.returnOperationbyIndex(count).contains("ln"))
+//                result = CalculationOperation.naturalLog(secondArgument);
 
             mCalcTV.setText(result);
 
             count++;
         }else if (v == mClearBtn){
             mCalcTV.setText("");
-            mAddButton.setEnabled(true);
-            mSubtractButton.setEnabled(true);
-            mDivideButton.setEnabled(true);
-            mMultiplyButton.setEnabled(true);
-            mRootXBtn.setEnabled(true);
-            mXRaisedToNBtn.setEnabled(true);
-            mNRootXBtn.setEnabled(true);
-            mXSquareBtn.setEnabled(true);
-            mLogBtn.setEnabled(true);
-            mNaturalLogBtn.setEnabled(true);
+            buttonState(true);
             mHistoryHelper.reset();
         } // passing the intent when the history button is pressed
         else if (v == mHistoryBtn){
@@ -552,6 +338,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra(HISTORY_DATA, bundle);
             startActivity(intent);
         }
+    }
+
+    private void doCalculation(String inputString) {
+
+        AsyncTask task = new AsyncTask() {
+            String result;
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                StringInputToFloatResultParser stringInputToFloatResultParser = new StringInputToFloatResultParser(inputString);
+                result = stringInputToFloatResultParser.toString();
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                mCalcTV.setText(result);
+            }
+        };
+
+        task.execute();
+    }
+
+    private void buttonState(boolean enableState) {
+        mAddButton.setEnabled(enableState);
+        mSubtractButton.setEnabled(enableState);
+        mDivideButton.setEnabled(enableState);
+        mMultiplyButton.setEnabled(enableState);
+        mRootXBtn.setEnabled(enableState);
+        mXRaisedToNBtn.setEnabled(enableState);
+        mNRootXBtn.setEnabled(enableState);
+        mXSquareBtn.setEnabled(enableState);
+        mLogBtn.setEnabled(enableState);
+        mNaturalLogBtn.setEnabled(enableState);
     }
 
     private void input(String s) {
