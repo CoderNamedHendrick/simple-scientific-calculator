@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.KeyEvent;
@@ -216,11 +217,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression("^");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
             } else if (mCalcTV.getText().toString().contains("\u221A")){
-                if(mCalcTV.getText().toString()
-                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
-                    mHistoryHelper.addToExpression("2");
-                else
-                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    if(mCalcTV.getText().toString()
+                            .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                        mHistoryHelper.addToExpression("2");
+                    else
+                        mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                }
                 mHistoryHelper.addToExpression("\u221A");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             } else
@@ -234,11 +237,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression("^");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
             } else if (mCalcTV.getText().toString().contains("\u221A")){
-                if(mCalcTV.getText().toString()
-                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
-                    mHistoryHelper.addToExpression("2");
-                else
-                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    if(mCalcTV.getText().toString()
+                            .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                        mHistoryHelper.addToExpression("2");
+                    else
+                        mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                }
                 mHistoryHelper.addToExpression("\u221A");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             }else
@@ -252,11 +257,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression("^");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
             } else if (mCalcTV.getText().toString().contains("\u221A")){
-                if(mCalcTV.getText().toString()
-                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
-                    mHistoryHelper.addToExpression("2");
-                else
-                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    if(mCalcTV.getText().toString()
+                            .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                        mHistoryHelper.addToExpression("2");
+                    else
+                        mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                }
                 mHistoryHelper.addToExpression("\u221A");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             }else
@@ -270,11 +277,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression("^");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
             } else if (mCalcTV.getText().toString().contains("\u221A")){
-                if(mCalcTV.getText().toString()
-                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
-                    mHistoryHelper.addToExpression("2");
-                else
-                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    if(mCalcTV.getText().toString()
+                            .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                        mHistoryHelper.addToExpression("2");
+                    else
+                        mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                }
                 mHistoryHelper.addToExpression("\u221A");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             }else
@@ -319,11 +328,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mHistoryHelper.addToExpression("^");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("^")+1));
             } else if (mCalcTV.getText().toString().contains("\u221A")){
-                if(mCalcTV.getText().toString()
-                        .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
-                    mHistoryHelper.addToExpression("2");
-                else
-                    mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+                    if(mCalcTV.getText().toString()
+                            .substring(0,mCalcTV.getText().toString().indexOf("\u221A")).isEmpty())
+                        mHistoryHelper.addToExpression("2");
+                    else
+                        mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(0, mCalcTV.getText().toString().indexOf("\u221A")));
+                }
                 mHistoryHelper.addToExpression("\u221A");
                 mHistoryHelper.addToExpression(mCalcTV.getText().toString().substring(mCalcTV.getText().toString().indexOf("\u221A")+1));
             } else
@@ -362,28 +373,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void doCalculation(String inputString) {
 
-        AsyncTask task = new AsyncTask() {
-            String result;
-            @Override
-            protected Object doInBackground(Object[] objects) {
-                StringInputToFloatResultParser stringInputToFloatResultParser = null;
-                try {
-                    stringInputToFloatResultParser = new StringInputToFloatResultParser(inputString);
-                    result = stringInputToFloatResultParser.toString();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
+        AsyncTask task = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            task = new AsyncTask() {
+                String result;
+                @Override
+                protected Object doInBackground(Object[] objects) {
+                    StringInputToFloatResultParser stringInputToFloatResultParser = null;
+                    try {
+                        stringInputToFloatResultParser = new StringInputToFloatResultParser(inputString);
+                        result = stringInputToFloatResultParser.toString();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                    }
+                    return null;
                 }
-                return null;
-            }
 
-            @Override
-            protected void onPostExecute(Object o) {
-                super.onPostExecute(o);
-                mCalcTV.setText(result);
-            }
-        };
+                @Override
+                protected void onPostExecute(Object o) {
+                    super.onPostExecute(o);
+                    mCalcTV.setText(result);
+                }
+            };
+        }
 
-        task.execute();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            task.execute();
+        }
     }
 
     private void buttonState(boolean enableState) {
