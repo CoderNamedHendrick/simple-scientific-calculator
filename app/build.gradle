@@ -6,11 +6,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    def appVersionCode = Integer.valueOf(System.env.BUILD_NUMBER ?: 1)
     defaultConfig {
         applicationId "com.hendrick.simplescientificcalculator"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 1
+        versionCode appVersionCode
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
