@@ -18,7 +18,7 @@ workflows:
       - name: Set up local properties
         script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/local.properties"
       - name: Build Android app
-        script: chmod +x ./gradlew assembleRelease
+        script: chmod +x ./gradlew build
     artifacts:
       - app/build/outputs/**/**/*.apk
     publishing:
